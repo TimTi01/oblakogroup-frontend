@@ -11,10 +11,10 @@ const app = express();
 
 app.use(requireHTTPS);
 app.use(cors());
-app.use(express.static('./dist/angular-todo-oblakogroup'));
+app.use(express.static('./dist/todo_angular-oblakogroup'));
 
 app.get('/*', function(req, res) {
-  res.sendFile('index.html', {root: 'dist/angular-todo-oblakogroup/'});
+  res.sendFile('index.html', {root: 'dist/todo_angular-oblakogroup/'});
 });
 
 app.listen(process.env.PORT || 8080);
