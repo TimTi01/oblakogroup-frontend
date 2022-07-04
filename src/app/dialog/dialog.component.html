@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Create Todo</h1>
+<div mat-dialog-content>
+    <form [formGroup]="createFrom"> 
+        <mat-form-field appearance="legacy">
+            <mat-label>Todo name</mat-label>
+            <input matInput 
+                   placeholder="Placeholder"
+                   formControlName="todoName"
+            >
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy">
+            <mat-label>Todo categories</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let category of categories" 
+                            [value]="category.name"
+                >
+                  {{category.name}}
+                </mat-option>
+              </mat-select>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-button>Close</button>
+    <button mat-flat-button color="primary" (click)="addTodo()">
+        Create
+    </button>
+  </div>
