@@ -11,18 +11,20 @@
 
         <mat-form-field appearance="legacy">
             <mat-label>Todo categories</mat-label>
-            <mat-select>
+            <!-- <mat-select>
                 <mat-option *ngFor="let category of categories" 
                             [value]="category.name"
                 >
                   {{category.name}}
                 </mat-option>
-              </mat-select>
+            </mat-select> -->
         </mat-form-field>
     </form>
 </div>
 <div mat-dialog-actions [align]="'end'">
-    <button mat-button>Close</button>
+    <button mat-button>
+        Close
+    </button>
     <button mat-flat-button color="primary" (click)="addTodo()">
         Create
     </button>
