@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DialogComponent } from './Components/dialog/dialog.component';
+import {MatDialog} from '@angular/material/dialog';
+import { CreatorTodoComponent } from './Components/creator-todo/creator-todo.component';
 import { Card, CardsService } from './services/cards.service';
+import { TodoService } from './services/todo.service';
 
 @Component({
   selector: 'app-root',
@@ -12,13 +12,23 @@ import { Card, CardsService } from './services/cards.service';
 export class AppComponent {
   title = 'todo_angular-oblakogroup';
 
+  public cards: Card[] | undefined;
+
   constructor(
-    private dialog: MatDialog,
+    public dialog: MatDialog,
+    private cardService: CardsService
   ) {}
 
   openDialog() {
-    this.dialog.open(DialogComponent, {
-      width: '30%'
-    });
+    const dialogRef = this.dialog.open(CreatorTodoComponent, {
+        height: '300px',
+        width: '400px',
+        data: this.cards
+      }
+    )
+    dialogRef.afterClosed().subscribe((data) => {
+      console.log(data);
+      this.cardService.emitter.emit()
+    })
   }
 }

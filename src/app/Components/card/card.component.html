@@ -4,6 +4,13 @@
     </mat-card-header>
     <mat-divider></mat-divider>
     <mat-card-content *ngFor="let todo of todos">
-        <mat-checkbox>{{todo.text}}</mat-checkbox>
+        <mat-checkbox [checked]="!!todo.is_completed" 
+                      (click)="toggleStatus(todo)"
+        >
+            {{todo.text}}
+        </mat-checkbox>
     </mat-card-content>
 </mat-card>
+
+
+<!-- (click)="toggleStatus(todo.id)" -->

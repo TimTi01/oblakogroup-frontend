@@ -1,11 +1,8 @@
-<mat-grid-list cols="1"
-               rowHeight="100px"
-               *ngFor="let card of cards"
+<div class="card-wrap"
+     *ngFor="let card of cards"
 >
-    <mat-grid-tile >
         <app-card [cardId]="card.id"
                   [title]="card.title"
                   [todos]="card.todos"
         ></app-card>
-    </mat-grid-tile>
-</mat-grid-list>
+</div>
