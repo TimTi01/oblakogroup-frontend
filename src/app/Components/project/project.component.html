@@ -1,8 +1,10 @@
-<div class="card-wrap"
-     *ngFor="let card of cards"
->
-        <app-card [cardId]="card.id"
-                  [title]="card.title"
-                  [todos]="card.todos"
-        ></app-card>
+<app-header [cards]="cards"></app-header>
+<div class="project-flex">
+        <ng-container *ngFor="let card of cards">
+                <app-card [cardId]="card.id"
+                          [title]="card.title"
+                          [todos]="card.todos"
+                ></app-card>
+        </ng-container>
+
 </div>

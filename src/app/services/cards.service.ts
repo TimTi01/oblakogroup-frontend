@@ -21,20 +21,15 @@ export interface TodoElement {
 export class CardsService {
   public emitter: EventEmitter<void> = new EventEmitter<void>() 
 
-  // private url = 'https://rails-todo-oblakogroup.herokuapp.com/projects'
-  private url = 'http://127.0.0.1:3000/projects'
-  //https://rails-todo-oblakogroup.herokuapp.com/projects/${cardId}/todos/${todoId}
+  private url = 'https://rails-todo-oblakogroup.herokuapp.com/projects'
 
   constructor(private httpClient: HttpClient) { }
 
   public getCards(): Observable<Card[]> {
     return this.httpClient.get<Card[]>(this.url)
   }
-
-  // public toggleTaskStatus(cardId: number | undefined, todoId: number): Observable<void> {
-  //   return this.httpClient.patch<void>(`http://127.0.0.1:3000/projects/${cardId}/todos/${todoId}`, null)
-  // }
+  
   public toggleTaskStatus(cardId: number | undefined, todo: Todo): Observable<void> {
-    return this.httpClient.patch<void>(`http://127.0.0.1:3000/projects/${cardId}/todos/${todo.id}`, todo)
+    return this.httpClient.patch<void>(`https://rails-todo-oblakogroup.herokuapp.com/projects/${cardId}/todos/${todo.id}`, todo)
   }
 }

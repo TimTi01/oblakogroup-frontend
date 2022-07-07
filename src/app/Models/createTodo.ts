@@ -1,4 +1,4 @@
 export declare class CreateTodo {
-    taskName: string;
-    category: string;
+    text: string;
+    project_id: string;
 }

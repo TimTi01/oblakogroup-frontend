@@ -1,6 +1,6 @@
 import { Todo } from "./todo";
 
-export class Project {
+export class Card {
     id: number;
     title: string;
     todos: Todo[];

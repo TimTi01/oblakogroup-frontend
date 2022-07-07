@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Card, CardsService } from 'src/app/services/cards.service';
+import { Card } from 'src/app/Models/card';
+import { CardsService } from 'src/app/services/cards.service';
 
 @Component({
   selector: 'app-project',
@@ -15,6 +16,7 @@ export class ProjectComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllCards()
+    this.cardService.emitter.subscribe(() => this.getAllCards());
   }
 
   private getAllCards() {

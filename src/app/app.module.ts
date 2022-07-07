@@ -9,13 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './Components/card/card.component';
 import { ProjectComponent } from './Components/project/project.component';
 import { CreatorTodoComponent } from './Components/creator-todo/creator-todo.component';
+import { HeaderComponent } from './Components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectComponent,
     CardComponent,
-    CreatorTodoComponent
+    CreatorTodoComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

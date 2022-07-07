@@ -21,10 +21,6 @@ export class CardComponent implements OnInit {
     private cardService: CardsService
   ) {}
 
-  // toggleStatus(todoId: number) {
-  //   this.cardService.toggleTaskStatus(this.cardId, todoId).subscribe(() => {});
-  //   console.log('cardId : ', this.cardId, 'todoId : ', todoId, 'title : ', this.title);
-  // }
   toggleStatus(todo: Todo) {
     this.cardService.toggleTaskStatus(this.cardId, todo).subscribe(() => {});
     console.log('cardId : ', this.cardId, 'todoId : ', todo.id, 'title : ', this.title);

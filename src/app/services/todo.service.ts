@@ -11,6 +11,7 @@ export class TodoService {
   constructor(private httpClient: HttpClient) { }
 
   public addTodo(todoData: CreateTodo): Observable<void> {
-    return this.httpClient.post<void>(`https://rails-todo-oblakogroup.herokuapp.com/todo`, todoData);
+    console.log('todoData: ',todoData);
+    return this.httpClient.post<void>(`https://rails-todo-oblakogroup.herokuapp.com/todos`, todoData);
   }
 }
