@@ -10,7 +10,7 @@ import { TodoService } from 'src/app/services/todo.service';
   styleUrls: ['./creator-todo.component.scss']
 })
 export class CreatorTodoComponent implements OnInit {
-  public creationTodo: CreateTodo = {text: '', project_id: ''}
+  public creationTodo: CreateTodo = {todo: {text: '', project_title: ''}}
   public selectedCategory: string = ''
 
   constructor(
@@ -29,7 +29,7 @@ export class CreatorTodoComponent implements OnInit {
 
   public createTodo(): void {
     if (this.selectedCategory !== 'new') {
-      this.creationTodo.project_id = this.selectedCategory
+      this.creationTodo.todo.project_title = this.selectedCategory
     }
     this.todoService.addTodo(this.creationTodo).subscribe(()=>{})
   }
