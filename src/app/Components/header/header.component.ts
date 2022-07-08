@@ -22,8 +22,8 @@ export class HeaderComponent implements OnInit {
 
   openDialog() {
     const dialogRef = this.dialog.open(CreatorTodoComponent, {
-        height: '280px',
-        width: '230px',
+        height: '320px',
+        width: '280px',
         data: this.cards
       }
     )
